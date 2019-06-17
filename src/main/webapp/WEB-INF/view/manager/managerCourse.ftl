@@ -45,8 +45,12 @@
                                             </button>
                                             <div class="dropdown-menu" x-placement="bottom-start"
                                                  style="position: absolute; will-change: transform; top: 0; left: 0; transform: translate3d(0px, 38px, 0px);">
-                                                <button onclick="search(this)" class="dropdown-item">教师</button>
-                                                <button onclick="search(this)" class="dropdown-item">类型</button>
+                                                <button onclick="searchCourse(this)" data-value="teacher"
+                                                        class="dropdown-item">教师
+                                                </button>
+                                                <button onclick="searchCourse(this)" data-value="type"
+                                                        class="dropdown-item">类型
+                                                </button>
                                                 <div class="dropdown-divider"></div>
                                                 <button onclick="void(0)" class="dropdown-item">模糊</button>
                                             </div>
@@ -158,14 +162,14 @@
     </section>
 
     <script>
-        function search(option) {
+        function searchCourse(option) {
             let params = {};
             params.content = $("#search input").val();
             let condition = option.getAttribute("data-value");
             $.ajax({
                 async: false,
                 type: "POST",
-                url: "${ctx}/manager/search/user/" + condition,
+                url: "${ctx}/manager/search/course/" + condition,
                 data: params,
                 dataType: "json",
                 success: function (data) {
@@ -181,7 +185,6 @@
                         // 将以上标签动态添加到tbody中进行展示
                         $("#main tbody").append("<tr>" + trtd + "</tr>");
                     }
-                    console.log(data);
                 },
                 error: function (data) {
                     alert(data);

@@ -11,6 +11,11 @@ public class Major {
 	@JSONField(name = "dept")
 	private Department dept;
 
+	private int proNeed;
+	private int comNeed;
+	private int proSelect;
+	private int comSelect;
+
 	public int getId() {
 		return id;
 	}
@@ -33,5 +38,37 @@ public class Major {
 
 	public void setDept(Department dept) {
 		this.dept = dept;
+	}
+
+	public int getProNeed() {
+		return proNeed;
+	}
+
+	public void setProNeed(int proNeed) {
+		this.proNeed = proNeed;
+	}
+
+	public int getComNeed() {
+		return comNeed;
+	}
+
+	public void setComNeed(int comNeed) {
+		this.comNeed = comNeed;
+	}
+
+	public int getProSelect() {
+		return proSelect;
+	}
+
+	public void setProSelect(int proSelect) {
+		this.proSelect = proSelect;
+	}
+
+	public int getComSelect() {
+		return comSelect;
+	}
+
+	public void setComSelect(int comSelect) {
+		this.comSelect = comSelect;
 	}
 }

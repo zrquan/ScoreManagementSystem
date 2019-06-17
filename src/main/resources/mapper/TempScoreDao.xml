@@ -30,4 +30,14 @@
         where course_id = #{courseId}
     </select>
 
+    <select id="getScoreByStudentNumber" resultMap="TempScoreResultMap">
+        select *
+        from score_check
+        where student_id = (
+            select id
+            from student
+            where snumber = #{number}
+        )
+    </select>
+
 </mapper>

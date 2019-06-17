@@ -1,4 +1,10 @@
 $(document).ready(function () {
+    let courses = [];
+    let values = [];
+    scoreJson.forEach((s) => {
+        courses.push(s.course.name);
+        values.push(s.value);
+    });
 
     // ------------------------------------------------------- //
     // Charts Gradients
@@ -15,22 +21,17 @@ $(document).ready(function () {
     // ------------------------------------------------------- //
     // Line Chart
     // ------------------------------------------------------ //
-    let LINECHARTEXMPLE = $('#gpaTrend');
+    let LINECHARTEXMPLE = $('#scoreDis');
     let lineChartExample = new Chart(LINECHARTEXMPLE, {
         type: 'line',
         options: {
             legend: {labels: {fontColor: "#777", fontSize: 12}},
             scales: {
                 xAxes: [{
-                    ticks:{
-                        autoSkip:false,
-                        minRotation:45
-                    },
                     display: true,
                     gridLines: {
                         color: '#eee'
-                    },
-
+                    }
                 }],
                 yAxes: [{
                     display: true,
@@ -41,10 +42,10 @@ $(document).ready(function () {
             },
         },
         data: {
-            labels: ["大一第1学期", "大一第2学期", "大二第1学期", "大二第2学期", "大三第1学期", "大三第2学期", "大四第1学期", "大四第2学期"],
+            labels: courses,
             datasets: [
                 {
-                    label: "所有成绩",
+                    label: "你的成绩",
                     fill: true,
                     lineTension: 0.3,
                     backgroundColor: gradient1,
@@ -63,11 +64,11 @@ $(document).ready(function () {
                     pointHoverBorderWidth: 2,
                     pointRadius: 1,
                     pointHitRadius: 10,
-                    data: [30, 50, 40, 61, 42, 35, 40],
+                    data: values,
                     spanGaps: false
                 },
                 {
-                    label: "去掉公选成绩",
+                    label: "平均成绩",
                     fill: true,
                     lineTension: 0.3,
                     backgroundColor: gradient2,
@@ -86,7 +87,8 @@ $(document).ready(function () {
                     pointHoverBorderWidth: 2,
                     pointRadius: 1,
                     pointHitRadius: 10,
-                    data: [50, 40, 50, 40, 45, 40, 30],
+                    // TODO
+                    data: values,
                     spanGaps: false
                 }
             ]
@@ -94,25 +96,25 @@ $(document).ready(function () {
     });
 
     // ------------------------------------------------------- //
-    // Doughnut Chart
+    // Pie Chart
     // ------------------------------------------------------ //
-    let DOUGHNUTCHARTEXMPLE = $('#scoreDistribute');
-    let pieChartExample = new Chart(DOUGHNUTCHARTEXMPLE, {
+    var PIECHART = $('#gpaDis');
+    var myPieChart = new Chart(PIECHART, {
         type: 'doughnut',
         options: {
-            cutoutPercentage: 70,
+            cutoutPercentage: 80,
         },
         data: {
             labels: [
-                "公选",
-                "专选",
+                "专必",
                 "公必",
-                "专必"
+                "专选",
+                "公选"
             ],
             datasets: [
                 {
-                    data: [250, 50, 100, 40],
-                    borderWidth: 0,
+                    data: creditList,
+                    borderWidth: [0, 0, 0, 0],
                     backgroundColor: [
                         '#3eb579',
                         '#49cd8b',
@@ -128,9 +130,5 @@ $(document).ready(function () {
                 }]
         }
     });
-
-    pieChartExample = {
-        responsive: true
-    };
 
 });

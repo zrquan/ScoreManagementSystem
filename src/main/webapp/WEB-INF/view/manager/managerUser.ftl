@@ -45,10 +45,10 @@
                                                 </button>
                                                 <div class="dropdown-menu" x-placement="bottom-start"
                                                      style="position: absolute; will-change: transform; top: 0; left: 0; transform: translate3d(0px, 38px, 0px);">
-                                                    <button onclick="search(this)" data-value="name"
+                                                    <button onclick="searchUser(this)" data-value="name"
                                                             class="dropdown-item">用户名
                                                     </button>
-                                                    <button onclick="search(this)" data-value="type"
+                                                    <button onclick="searchUser(this)" data-value="type"
                                                             class="dropdown-item">类型
                                                     </button>
                                                     <div class="dropdown-divider"></div>
@@ -288,15 +288,7 @@
     </section>
 
     <script>
-        function searchName() {
-            $("#search").attr("action", "${ctx}/managerInfo/search/user/name").submit();
-        }
-
-        function searchType() {
-            $("#search").attr("action", "${ctx}/managerInfo/search/user/type").submit();
-        }
-
-        function search(option) {
+        function searchUser(option) {
             let params = {};
             params.content = $("#search input").val();
             let condition = option.getAttribute("data-value");

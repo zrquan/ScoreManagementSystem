@@ -4,6 +4,10 @@
     <resultMap id="MajorResultMap" type="org.zrquan.sms.entity.Major">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="major_name" jdbcType="VARCHAR" property="name"/>
+        <result column="pro_need_credit" jdbcType="INTEGER" property="proNeed"/>
+        <result column="com_need_credit" jdbcType="INTEGER" property="comNeed"/>
+        <result column="pro_select_credit" jdbcType="INTEGER" property="proSelect"/>
+        <result column="com_select_credit" jdbcType="INTEGER" property="comSelect"/>
         <association property="dept"
                      column="department_id"
                      select="org.zrquan.sms.dao.DepartmentDao.getDeptById"/>

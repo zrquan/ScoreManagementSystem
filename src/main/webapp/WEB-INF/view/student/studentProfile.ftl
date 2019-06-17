@@ -1,10 +1,12 @@
 <#include "studentMacro.ftl">
 <@student keywords="学生信息" js=["js/edit.js"]>
+
     <header class="page-header">
         <div class="container-fluid">
             <h2 class="no-margin-bottom">个人信息</h2>
         </div>
     </header>
+
     <section class="form">
         <div class="container-fluid">
             <div class="row">

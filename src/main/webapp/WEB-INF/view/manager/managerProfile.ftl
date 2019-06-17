@@ -19,7 +19,7 @@
                                 </button>
                                 <div aria-labelledby="closeCard3" class="dropdown-menu dropdown-menu-right has-shadow">
                                     <a href="#" class="dropdown-item remove"><i class="fa fa-times"></i>Close</a>
-                                    <a href="javascript:;" class="dropdown-item edit"><i class="fa fa-gear"></i>Edit</a>
+                                    <a href="javascript:void(0)" class="dropdown-item edit"><i class="fa fa-gear"></i>Edit</a>
                                 </div>
                             </div>
                         </div>

@@ -5,8 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.zrquan.sms.entity.Major;
 import org.zrquan.sms.entity.Student;
 import org.zrquan.sms.entity.User;
+import org.zrquan.sms.service.CommonServiceImpl;
 import org.zrquan.sms.service.StudentServiceImpl;
 
 import javax.servlet.http.HttpSession;
@@ -16,6 +18,8 @@ import javax.servlet.http.HttpSession;
 public class StudentController {
 	@Autowired
 	StudentServiceImpl studentService;
+	@Autowired
+	CommonServiceImpl commonService;
 
 	/**
 	 * 设置用户基本信息
@@ -39,8 +43,14 @@ public class StudentController {
 
 		User user = (User) session.getAttribute("user");
 		String number = user.getAccountNumber();
+
 		String scoreInfo = studentService.getScoreInfo(number);
+		String creditInfo = studentService.getCreditInfo(number);
+		Major majorInfo = studentService.getMajorInfo(number);
+
 		model.addAttribute("score", scoreInfo);
+		model.addAttribute("credit", creditInfo);
+		model.addAttribute("major", majorInfo);
 
 		return "student/studentScore";
 	}

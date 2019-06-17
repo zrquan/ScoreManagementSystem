@@ -14,4 +14,9 @@ public class StudentServiceImplTest extends BaseTest {
 		System.out.println(json);
 	}
 
+	@Test
+	public void testGetCreditInfo() {
+		String json = studentService.getCreditInfo("16369003");
+		System.out.println(json);
+	}
 }

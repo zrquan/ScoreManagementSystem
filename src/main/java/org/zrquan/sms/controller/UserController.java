@@ -32,7 +32,7 @@ public class UserController {
 
 			return String.format("redirect:%s/main", user.getUserType());
 		} else {
-			model.addAttribute("message", "登录失败");
+			model.addAttribute("message", "Account number or password is not correct!");
 			return "loginPage";
 		}
 	}

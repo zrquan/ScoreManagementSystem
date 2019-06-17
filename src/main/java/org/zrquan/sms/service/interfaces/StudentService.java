@@ -1,5 +1,6 @@
 package org.zrquan.sms.service.interfaces;
 
+import org.zrquan.sms.entity.Major;
 import org.zrquan.sms.entity.Student;
 
 public interface StudentService {
@@ -18,4 +19,13 @@ public interface StudentService {
 	 * @return JSON字符串
 	 */
 	String getScoreInfo(String number);
+
+	/**
+	 * 获取学分详情
+	 *
+	 * @param number 学号
+	 */
+	String getCreditInfo(String number);
+
+	Major getMajorInfo(String number);
 }
