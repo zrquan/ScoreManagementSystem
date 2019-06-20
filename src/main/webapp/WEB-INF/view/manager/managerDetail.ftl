@@ -3,7 +3,7 @@
 
     <header class="page-header">
         <div class="container-fluid">
-            <a href="${ctx}/manager/course">课程信息</a> / 成绩详情
+            <a href="${ctx}/manager/score">课程信息</a> / 成绩详情
         </div>
     </header>
 

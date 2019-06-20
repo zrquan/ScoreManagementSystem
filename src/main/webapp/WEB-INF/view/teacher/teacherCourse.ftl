@@ -19,11 +19,14 @@
                                         aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i>
                                 </button>
                                 <div aria-labelledby="closeCard3" class="dropdown-menu dropdown-menu-right has-shadow">
-                                    <a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a
-                                            href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a>
+                                    <a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a>
+                                    <a href="javascript:void(0)" class="dropdown-item export">
+                                        <i class="fa fa-gear"></i>Export
+                                    </a>
                                 </div>
                             </div>
                         </div>
+
                         <div class="card-header d-flex align-items-center">
                             <h3 class="h4">你的课程</h3>
                         </div>

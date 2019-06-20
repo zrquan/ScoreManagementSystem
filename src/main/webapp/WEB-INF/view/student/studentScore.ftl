@@ -302,14 +302,14 @@
                                     <td>${cnObtain}</td>
                                     <td>${major.comNeed-cnObtain}</td>
                                     <td>
-                                        <#assign progress4 = cnObtain / major.comNeed * 100>
+                                        <#assign progress1 = cnObtain / major.comNeed * 100>
                                         <div class="progress" style="height: 20px;">
                                             <div class="progress-bar progress-bar-striped"
                                                  role="progressbar"
                                                  aria-valuenow="${cnObtain}"
                                                  aria-valuemin="0" aria-valuemax="${major.comNeed}"
-                                                 style="width: ${progress4}%;">
-                                                ${progress4}% 完成
+                                                 style="width: ${progress1}%;">
+                                                ${progress1}% 完成
                                             </div>
                                         </div>
                                     </td>
@@ -322,14 +322,14 @@
                                     <td>${pnObtain}</td>
                                     <td>${major.proNeed-pnObtain}</td>
                                     <td>
-                                        <#assign progress4 = pnObtain / major.proNeed * 100>
+                                        <#assign progress2 = pnObtain / major.proNeed * 100>
                                         <div class="progress" style="height: 20px;">
                                             <div class="progress-bar progress-bar-striped"
                                                  role="progressbar"
                                                  aria-valuenow="${pnObtain}"
                                                  aria-valuemin="0" aria-valuemax="${major.proNeed}"
-                                                 style="width: ${progress4}%;">
-                                                ${progress4}% 完成
+                                                 style="width: ${progress2}%;">
+                                                ${progress2}% 完成
                                             </div>
                                         </div>
                                     </td>
@@ -342,14 +342,14 @@
                                     <td>${csObtain}</td>
                                     <td>${major.comSelect-csObtain}</td>
                                     <td>
-                                        <#assign progress4 = csObtain / major.comSelect * 100>
+                                        <#assign progress3 = csObtain / major.comSelect * 100>
                                         <div class="progress" style="height: 20px;">
                                             <div class="progress-bar progress-bar-striped"
                                                  role="progressbar"
                                                  aria-valuenow="${csObtain}"
                                                  aria-valuemin="0" aria-valuemax="${major.comSelect}"
-                                                 style="width: ${progress4}%;">
-                                                ${progress4}% 完成
+                                                 style="width: ${progress3}%;">
+                                                ${progress3}% 完成
                                             </div>
                                         </div>
                                     </td>
@@ -388,13 +388,14 @@
                                     <td>${totalObtain}</td>
                                     <td>${totalNeed - totalObtain}</td>
                                     <td>
+                                        <#assign progress5 = (totalObtain/totalNeed)*100>
                                         <div class="progress" style="height: 20px;">
                                             <div class="progress-bar progress-bar-striped"
                                                  role="progressbar"
                                                  aria-valuenow="${totalObtain}"
                                                  aria-valuemin="0" aria-valuemax="${totalNeed}"
-                                                 style="width: ${totalObtain / totalNeed}%;">
-                                                ${totalObtain / totalNeed}% 完成
+                                                 style="width: ${progress5}%;">
+                                                ${progress5}% 完成
                                             </div>
                                         </div>
                                     </td>

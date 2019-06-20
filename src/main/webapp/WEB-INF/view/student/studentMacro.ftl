@@ -31,7 +31,7 @@
                                 <i class="icon-user"></i>联系
                             </a>
                             <ul id="contact" class="collapse list-unstyled ">
-                                <li><a href="${ctx}/student/contact">班级通讯录</a></li>
+                                <li><a href="${ctx}/student/contact">通讯录</a></li>
                             </ul>
                         </li>
                         <li>

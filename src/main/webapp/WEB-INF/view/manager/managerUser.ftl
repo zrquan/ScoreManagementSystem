@@ -1,5 +1,5 @@
 <#include "managerMacro.ftl">
-<@manager keywords="教务管理员信息" js=[]>
+<@manager keywords="教务管理员信息" js=["js/table-page.js"]>
     <header class="page-header">
         <div class="container-fluid">
             <h2 class="no-margin-bottom">用户管理</h2>
@@ -11,6 +11,20 @@
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8">
                     <div class="card">
+                        <div class="card-close">
+                            <div class="dropdown">
+                                <button type="button" id="closeCard3" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i>
+                                </button>
+                                <div aria-labelledby="closeCard3" class="dropdown-menu dropdown-menu-right has-shadow">
+                                    <a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a>
+                                    <a href="javascript:void(0)" class="dropdown-item export">
+                                        <i class="fa fa-gear"></i>Export
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="card-body">
 
                             <#--判断添加状态-->
@@ -283,8 +297,8 @@
                                         <th>账号</th>
                                         <th>用户名</th>
                                         <th>角色</th>
-                                        <th>手机</th>
                                         <th>邮箱</th>
+                                        <th>手机</th>
                                         <th>创建时间</th>
                                     </tr>
                                     </thead>
@@ -307,6 +321,9 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <span id="spanFirst"><< </span> <span id="spanPre">pre</span> <span
+                                    id="spanNext">next</span> <span id="spanLast"> >></span> <span
+                                    id="spanPageNum"></span>/<span id="spanTotalPage"></span>
                         </div>
                     </div>
                 </div>
