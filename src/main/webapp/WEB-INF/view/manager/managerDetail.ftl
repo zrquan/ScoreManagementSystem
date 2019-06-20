@@ -68,6 +68,7 @@
                                                         <td>否</td>
                                                     </#if>
                                                 <#else>
+                                                    <#assign isSubmit = 0>
                                                     <td colspan="2">未提交</td>
                                                     <td>${student.major.name}</td>
                                                     <td colspan="2">未提交</td>
@@ -76,9 +77,12 @@
                                         </#list>
                                         </tbody>
                                     </table>
+                                    <#if isSubmit??>
+                                    <#else>
+                                        <button class="btn btn-primary" id="submitScore">确认成绩</button>
+                                    </#if>
                                 <#else>
                                 </#if>
-                                <button class="btn btn-primary" id="submitScore">确认成绩</button>
                             </div>
                         </div>
                     </div>

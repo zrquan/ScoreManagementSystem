@@ -56,7 +56,8 @@
                                                 </#if>
                                                 <td>${(user.email)!"***"}</td>
                                                 <td>
-                                                    <button type="button" data-toggle="modal" data-target="#feedback"
+                                                    <button type="button" data-toggle="modal"
+                                                            data-target="#feedback${record.id}"
                                                             class="btn btn-sm btn-info">查看
                                                     </button>
                                                     <a href="${ctx}/manager/deleteFeedback?id=${record.id}"
@@ -65,7 +66,7 @@
                                                     </a>
                                                 </td>
                                             </tr>
-                                            <div id="feedback" tabindex="-1" role="dialog"
+                                            <div id="feedback${record.id}" tabindex="-1" role="dialog"
                                                  aria-labelledby="addTeacherTitle"
                                                  class="modal fade text-left" style="display: none;" aria-hidden="true">
                                                 <div role="document" class="modal-dialog">

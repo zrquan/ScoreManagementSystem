@@ -168,8 +168,8 @@ public class ManagerController {
 	public String addTeacher(Model model,
 							 @ModelAttribute Teacher teacher,
 							 @RequestParam int deptId,
-							 @RequestParam String email,
-							 @RequestParam String phone) {
+							 @RequestParam(required = false) String email,
+							 @RequestParam(required = false) String phone) {
 
 		boolean success = false;
 		try {
@@ -181,6 +181,8 @@ public class ManagerController {
 			}
 		} catch (DuplicateKeyException e) {
 			model.addAttribute("message", "账号已存在");
+		} catch (Exception e) {
+			model.addAttribute("message", "未知错误");
 		}
 
 		return "redirect:/manager/user";
@@ -193,8 +195,8 @@ public class ManagerController {
 	public String addStudent(Model model,
 							 @ModelAttribute Student student,
 							 @RequestParam int majorId,
-							 @RequestParam String email,
-							 @RequestParam String phone) {
+							 @RequestParam(required = false) String email,
+							 @RequestParam(required = false) String phone) {
 
 		boolean success = false;
 		try {
@@ -206,6 +208,8 @@ public class ManagerController {
 			}
 		} catch (DuplicateKeyException e) {
 			model.addAttribute("message", "账号已存在");
+		} catch (Exception e) {
+			model.addAttribute("message", "未知错误");
 		}
 
 		return "redirect:/manager/user";

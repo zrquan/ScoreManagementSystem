@@ -28,7 +28,7 @@
                             </div>
                         </div>
                         <div class="card-header d-flex align-items-center">
-                            <h4 class="h4">Profile</h4>
+                            <h4 class="h4">Feedback</h4>
                         </div>
 
                         <div class="card-body">
